@@ -1,31 +1,15 @@
+*{
+    padding:0;
+    margin :0;
+    box-sizing: border-box;
+}
+
+
 body {
-	margin: 0
+	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-}
-
-#image {
-	border: 1px solid transparent;
-	background: url(https://res.cloudinary.com/barbzy-dev1/image/upload/v1569413300/dollar-resized4_x83i65.jpg) top center no-repeat;
-	height: 11vh;
-	top: 0;
-	left: 0;
-	right: 0;
-	position: fixed;
-	opacity: 0.8;
-	background-color: black;
-}
-
-#nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-#logo-div {
-	padding: 5px;
-	width: 25%;
-
+    font-family: 'Quicksand', sans-serif;
 }
 
 #logo {
@@ -33,37 +17,49 @@ body {
     height: auto;
 }
 
-#menu {
-	width: 40%;
-	margin-right: 10px;
-	list-style-type: none;
-	display: flex;
-	justify-content: flex-end;
-	align-self: center;
-}
-
-#menu li a {
-	text-align: center;
-	text-decoration: none;
-	color: white;
-	margin: 0 15px;
-	padding: 5px;
-	opacity: ;
-	font-weight: bold;
-}
-
-#menu li a:hover {
-	color: #00B300;
-}
+nav li {
+	display: inline-block;
+	margin-left: 40px;
+  }
+  
+  .navbar-nav .nav-link,
+  .navbar-light .navbar-nav .nav-link {
+	color: #fff;
+	/* border-bottom: 2px solid yellow; */
+  }
+  
+  .navbar-nav li:last-child{
+	margin-right: 30px;
+  }
+  
+  .navbar-light .navbar-nav .nav-link:hover,
+  .navbar-light .navbar-nav .nav-link:focus {
+	  color: #00b300;
+  }
+  
+  .navbar-light{
+	background: url(../css/img/header.jpg);
+  }
+  
+  #logo {
+	height: 80px;
+	width: auto;
+	/* float: left; */
+	margin-top: 5px;
+	margin-left: 25px;
+	padding: auto;
+  
+  }
 
 #data {
-	position: relative;
 	top: 15vh;
 	width: 95%;
 	margin: auto;
-	margin-bottom: 70px;
+	margin-bottom: 30px;
+	margin-top: 15px;
 	border: 1px solid grey;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	border-radius: 10px;
 }
 
 #data h3 {
@@ -72,6 +68,8 @@ body {
 	margin-top: 30px;
 	margin-bottom: 10px;
 	text-align: center;
+	font-size: 30px;
+
 }
 
 #data h5 {
@@ -122,7 +120,7 @@ body {
 	width: 80%;
 	padding: 5px;
 	margin: 30px auto 20px auto;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: bold;
 }
 
@@ -137,18 +135,19 @@ body {
 }
 
 #reset {
-	background-color: rgba(0,179,0,0.8);
+	background-color: #00b300;
 	color: white;
-	border-radius: 10px;
+	border-radius: 5px;
 	width: 164px;
 	height: 40px;
 	font-size: 16px;
 	font-style: normal;
-	font-weight: bold;
+	/* font-weight: bold; */
 	line-height: 22px;
 	border-color: #00B300;
 	outline: none;
 	cursor: pointer;
+	margin-bottom: 20px;
 }
 
 #reset:hover {
@@ -169,14 +168,20 @@ body {
 }
 
 .entry label {
-	font-size: 18px;
+	font-size: 16px;
 }
+
 
 #assets input, #liabilities input {
 	border: 1px solid grey;
 	box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.2);
 	outline: none;
 	height: 25px;
+	box-sizing: border-box;
+	padding: 5px;
+	border-radius: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
 }
 
 #assets input:focus, #liabilities input:focus {
@@ -184,12 +189,14 @@ body {
 } 
 
 #moreAssets button, #moreLiabilities button {
-	background: rgba(192,192,192,0.9);
-	outline: none;
+	background: #00B300;
+	color:whitesmoke;
 }
 
 #moreAssets button:hover, #moreLiabilities button:hover {
-	color: #00B300;;
+	color: #00B300;
+	border: 1px solid #00B300;
+	background: #fafcfe;
 }
 
 #moreAssets, #moreLiabilities {
@@ -208,7 +215,7 @@ body {
 #totalAssets, #totalLiabilities {
 	margin-top: 35px;
 	margin-bottom: 15px;
-	font-size: 16px;
+	font-size: 18px;
 }
 
 #worth {
@@ -216,25 +223,69 @@ body {
 }
 
 footer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 40px;
-	background-color: #3A3A3A;
-	color: white;
-	font-style: normal;
-	font-weight: bold;
-	line-height: 17px;
-	position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-}
+	background-color: #333;
+	padding-top: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-size: 80%;
+	margin-top: 20px;
+  }
+  
+  .footer-nav {
+	list-style: none;
+	float: left;
+  }
+  
+  
+  
+  .footer-nav li {
+	display: inline-block;
+	margin-right: 20px;
+  }
+  
+  .footer-nav li:last-child {
+	margin-right: 0;
+  }
+  
+  .footer-nav li a:link,
+  .footer-nav li a:visited, {
+	text-decoration: none;
+	border: 0;
+	color: #888;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
+  }
+  
+  .footer-nav li a:hover,
+  .footer-nav li a:active {
+	color: #ddd;
+  }
+  
+  footer p {
+	color: #fff;
+	/* text-align: center; */
+	margin-top: 10px;
+	line-height: 2em;
+  }
+  footer h3{
+	font-size: 22px;
+	color: #00b300;
+  }
+  footer address{
+	font-size: 14px;
+	color: #fefffe;
+	line-height: 2em;
+  }
 
 
 @media screen and (max-width: 900px) {
 	#calculator {
 		flex-direction: column;
+	}
+
+	#logo{
+		height : 50px;
+		width: auto;
 	}
 
 	#assets, #liabilities {
@@ -251,19 +302,5 @@ footer {
 
 @media screen and (max-width: 600px) {
 
-	#nav {
-		padding-top: 17px;
-	}
 
-	#menu {
-		width: 15%;
-	}
-
-	#logo-div {
-		width: 15%;
-	}
-
-	#menu li a {
-		font-size: 12px;
-		font-weight: normal;
 }

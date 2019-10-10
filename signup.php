@@ -143,7 +143,7 @@ if(isset($_POST['submit'])){
 			</div> -->
 
 			<div class="img-form">
-			   <img class="img" src="css/img/dollar-resized3.jpg"/>
+			   <img class="img" src="css/img/dollar-resized3.jpg" height="100" width="100%"/>
 			   
 				<form id="register" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" onsubmit="return Validate1()" name="vform">
 				<div id="firstname_div">

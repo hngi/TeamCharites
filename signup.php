@@ -179,8 +179,8 @@ if(isset($_POST['submit'])){
 				
 				
 
-				<!-- <input id="reg" name="submit" type="Submit"  value="Sign up"> -->
-                <button type="submit" name="submit" id="reg">Sign up</button>
+				<input id="reg" name="submit" type="Submit"  value="Sign up">
+
 
 				<div id="register-alert">
 					<p>Have an account?</p>

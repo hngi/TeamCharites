@@ -168,7 +168,7 @@ input {
 	padding-left: 20px;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	font-size: 14px;
+	/* font-size: 14px; */
 	outline: none;
 
 }
@@ -193,11 +193,13 @@ input {
 	height: 35px;
 	margin: 20px auto;
 	outline: none;
+	/* font-weight: 700; */
 }
 
 #register #reg{
 	background: #00b300;
 	padding: 5px !important;
+	font-weight: 200;
 }
 
 #register #reg:hover{

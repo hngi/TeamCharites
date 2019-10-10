@@ -148,8 +148,8 @@ if(isset($_POST['submit'])){
 			</div> -->
 
 			<div class="img-form">
-			   <img class="img" src="css/img/dollar-resized3.jpg"/>
-			   
+            <img class="img" src="css/img/dollar-resized3.jpg" height="100" width="100%"/>
+            <h3 class="text-center text-bold mt-3 mb-3" style="color: #00B300; font-weight: 800;">SIGN IN</h3>
 				<form id="log-in" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"  method="post" name="uform">
 					
 						<input type="text" name="username1" placeholder=" Username" value="" >

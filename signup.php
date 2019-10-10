@@ -142,10 +142,10 @@ if(isset($_POST['submit'])){
 				<a href="#">What?</a>
 			</div> -->
 
-			<div class="img-form">
+			<div class="img-form rounded">
 			   <img class="img" src="css/img/dollar-resized3.jpg" height="100" width="100%"/>
                 <h3 class="text-center text-bold mt-3 mb-3" style="color: #00B300; font-weight: 800;">SIGN UP</h3>
-				<form id="register" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" onsubmit="return Validate1()" name="vform">
+				<form id="register" class="rounded" style="border-radius: 10px;" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" onsubmit="return Validate1()" name="vform">
 				<div id="firstname_div">
 					<input type="text" name="firstname" placeholder="Firstname" value=""  required="">
 					<div id="fname_error"></div>

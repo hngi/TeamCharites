@@ -1,3 +1,68 @@
+<?php
+// Include config file
+// require_once "config.php";
+
+//$con = mysqli_connect('sql12.freemysqlhosting.net','sql12307701', 'E5V4g1DbCE');
+
+//$con = mysqli_connect('localhost', 'root', '', 'hng');
+//
+//mysqli_select_db($con, 'sql12307701');
+
+try{
+    $pdo = new PDO('mysql:unix_socket=/cloudsql/hngtobi:us-central1:hng;dbname=hng', 'root', '');
+}
+catch(PDOException $e){
+    $output = 'Unable to connect to the database server: ' . $e;
+    echo "<span class= 'alert-danger form-error'> Oops! Something went wrong please try again.</span>";
+}
+
+$messages='';
+$error='';
+
+
+
+// Processing form data when form is submitted
+if(isset($_POST['submit'])){
+
+    $name = trim($_POST["name"]);
+    $email = trim($_POST["email"]);
+    $phone = trim($_POST["phone"]);
+    $message = trim($_POST["message"]);
+
+if(empty($name)){
+   $error='name field cant be empty';
+}
+elseif (empty($email)){
+    $error='Mail field Cant be empty';
+}
+elseif(empty($phone)){
+   $error='Phone Field cant be empty';
+}
+elseif (empty($message)){
+    $error='message field cant be empty';
+}
+elseif (!filter_var($email,FILTER_VALIDATE_EMAIL)){
+    $error='Invalid Email Address';
+}
+else {
+
+    $pdoquery = "INSERT INTO `contact` (`name`,`email`,`phone`,`message`)VALUES (:a,:b,:j,:d)";
+    $pdoresult = $pdo->prepare($pdoquery);
+    $pdoExec = $pdoresult->execute(array(":a" => $name, ":b" => $email, ":j" => $phone, ":d" => $message));
+    if($pdoExec){
+        $messages='message sent succesfully';
+    }
+    else{
+        $error="Something went wrong. Please try again later.";
+
+    }
+}
+
+
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -68,14 +133,49 @@
 
                 <div class="col-md-6">
                     <h2 class="pt-3">Contact Us</h2>
-                    <form action="">
+			<?php
+                        if($empty_email_err!=''){
+                            echo "<div style='background-color: red;' class='alert-danger'>";
+                            echo $empty_password_err;
+                            echo "</div>";
+                        }
+                        elseif ($empty_password_err!=''){
+                            echo "<div style='background-color: red;' class='alert-danger'>";
+                            echo $empty_password_err;
+                            echo "</div>";
+                        }
+                        else if($check_password_err!=''){
+                            echo "<div style='background-color: red;' class='alert-danger'>";
+                            echo $check_password_err;
+                            echo "</div>";
+                        }
+                        else if($check_mail_err!=''){
+                            echo "<div style='background-color: red;'>";
+                            echo $check_mail_err;
+                            echo "</div>";
+                        }
+                        else if($invalid_err!=''){
+                            echo "<div style='background-color: red;'>";
+                            echo $invalid_err;
+                            echo "</div>";
+                        }
+                        ?>
+			  <form action="about.php" method="post">
+
+                        <input name="name" type="text" class='field' placeholder="Your Name" >
+                        <input name="email" type="email" class="field" placeholder="Email Address" >
+                        <input name="phone" type="text" class="field" placeholder="Telephone Number" >
+                        <textarea name="message" class="field area" id="" placeholder="Message"></textarea>
+                        <button name="submit" type="submit" class='btn'>Submit</button>
+                    </form>
+<!--                     <form action="about.php" method="post">
                         <input type="text" class='field' placeholder="Your Name" required>
                         <input type="email" class="field" placeholder="Email Address" required>
                         <input type="text" class="field" placeholder="Telephone Number" required>
                         <textarea name="" class="field area" id="" placeholder="Message"
                             required></textarea>
                         <button type="submit" class='btn'>Submit</button>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div>
